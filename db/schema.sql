@@ -1,0 +1,26 @@
+CREATE TABLE meter_readings (
+    site_id VARCHAR(64) NOT NULL,
+    ts TIMESTAMPTZ NOT NULL,
+    kwh DOUBLE PRECISION NOT NULL,
+    PRIMARY KEY (site_id, ts)
+);
+CREATE TABLE weather_hourly (
+    site_id VARCHAR(64) NOT NULL,
+    ts TIMESTAMPTZ NOT NULL,
+    temp_c DOUBLE PRECISION,
+    humidity DOUBLE PRECISION,
+    solar_rad DOUBLE PRECISION,
+    hdd DOUBLE PRECISION,
+    cdd DOUBLE PRECISION,
+    PRIMARY KEY (site_id, ts)
+);
+CREATE TABLE forecast_logs (
+    id SERIAL PRIMARY KEY,
+    site_id VARCHAR(64) NOT NULL,
+    forecast_ts TIMESTAMPTZ NOT NULL,
+    p10 DOUBLE PRECISION NOT NULL,
+    p50 DOUBLE PRECISION NOT NULL,
+    p90 DOUBLE PRECISION NOT NULL,
+    actual_kwh DOUBLE PRECISION,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);

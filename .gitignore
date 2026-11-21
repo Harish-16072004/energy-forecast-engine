@@ -1,0 +1,24 @@
+# Byte-compiled / virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+*.egg-info/
+.pytest_cache/
+
+# Environment variables & secrets
+.env
+.env.*
+
+# Raw datasets & generated outputs
+data/
+artifacts/
+reports/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
